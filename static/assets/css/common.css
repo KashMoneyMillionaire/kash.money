@@ -1,0 +1,34 @@
+.content a {
+    color: cyan;
+    border-bottom: 1px solid cyan;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+header {
+    padding: 1rem 0 1rem 0;
+    min-height: 4rem;
+}
+
+header.bio-header {
+    padding-bottom: 4rem;
+}
+
+main {
+    margin: 0 auto -3rem;
+    max-width: 700px;
+    height: calc(100vh - 6rem);
+}
+
+footer {
+    height: 3rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--gray-1);
+    border-bottom: 1px solid var(--gray-1);
+}

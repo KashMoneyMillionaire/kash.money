@@ -1,0 +1,22 @@
+<header class="bio-header">
+    <a class="site-title" href="{{site.BaseURL}}">i am kash (moneymillionaire)</a>
+</header>
+<section id="bio">
+    <section id="img-wrapper">
+        <img src="{{site.Data.author.profilePic}}" alt="Profile picture of {{site.Data.author.name}}" />
+    </section>
+    <section id="bio-wrapper">
+        <div id="text-wrapper">
+            <p>
+                Keep things simple, stay curious, build better technology.
+            </p>
+        </div>
+        <div id="social-wrapper">
+            {{ range site.Data.author.contact }}
+            <a href="{{ .url }}" target="_blank">
+                <img src="{{ site.BaseURL }}assets/icons/{{ .title }}.png" alt="" />
+            </a>
+            {{ end }}
+        </div>
+    </section>
+</section>

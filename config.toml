@@ -1,0 +1,21 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Kash Cummings"
+rssLimit = 20
+copyright = "2022 {{ range site.Data.author.name }} All rights reserved"
+minify = false
+
+[Author]
+  name = "Kash Cummings"
+  email = "me@kash.money"
+
+[permalinks]
+  posts = "/:year/:month/:day/:filename"
+  pages = "/:slug"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["html", "json", "rss"]
