@@ -1,0 +1,94 @@
+* img {
+    max-width: 100%;
+}
+
+main {
+    margin: 0 auto -3rem;
+    max-width: 700px;
+    min-height: calc(100vh - 6rem);
+    padding: 2rem 2rem 0rem;
+
+    @media screen and (max-width: 750px) {
+        & {
+            min-height: calc(100vh - 7.5rem);
+        }
+    }
+}
+
+.bio-header {
+    padding-bottom: 4rem;
+    display: block;
+
+    .site-title {
+        font-size: 4rem;
+        font-weight: bolder;
+        line-height: 110%;
+        color: var(--white-1);
+
+        &.milli {
+            font-size: 4rem;
+        }
+
+        @media screen and (max-width: 750px) {
+            & {
+                font-size: 3rem;
+                display: block;
+                text-align: center;
+            }
+
+            &.milli {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* article section */
+.articles {
+    display: grid;
+    margin: 4rem 0 3rem 0;
+    .article {
+        padding: 2rem;
+        background: var(--gray-3);
+        border-radius: 15px;
+        transition: all 0.2s ease-in-out;
+        .article-title {
+            color: var(--white-2);
+            font-weight: 100;
+            font-style: italic;
+            font-size: 1.4rem;
+            line-height: 130%;
+            a {
+                color: var(--white-2);
+                font-weight: 100;
+                font-style: italic;
+                font-size: 1.4rem;
+                line-height: 130%;
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+        .date {
+            display: block;
+            font-size: 0.8rem;
+        }
+        .tags {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            .tag {
+                margin: 0 0.5rem 0.3rem 0;
+                display: block;
+                color: var(--gray-4);
+                background: var(--white-2);
+                border-radius: 15px;
+                font-size: 0.7rem;
+                padding: 0 0.8rem;
+                line-height: 1.3rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

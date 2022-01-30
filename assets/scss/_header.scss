@@ -1,0 +1,21 @@
+header {
+    padding: 0;
+    height: 4rem;
+
+    &.site-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            padding: 0 15px;
+        }
+        .big {
+            font-size: 1.5rem;
+        }
+        a {
+            color: unset;
+            border-bottom: unset;
+        }
+    }
+}

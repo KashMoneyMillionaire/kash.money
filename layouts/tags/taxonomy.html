@@ -5,7 +5,6 @@
 <body>
     {{ partial "header.html" . }}
     <main>
-        <!-- {{ partial "bio.html" . }} -->
         <h2>Tag: {{.Title}}</h2>
         <section class="articles">
             {{ range .Paginator.Pages }}
