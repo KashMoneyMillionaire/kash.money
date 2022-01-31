@@ -79,7 +79,6 @@ main {
         text-align: center; }
       .bio-header .site-title.milli {
         font-size: 1.5rem; } }
-/* article section */
 .articles {
   display: grid;
   margin: 4rem 0 3rem 0; }
@@ -87,7 +86,8 @@ main {
     padding: 2rem;
     background: var(--gray-3);
     border-radius: 15px;
-    transition: all 0.2s ease-in-out; }
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 3rem; }
     .articles .article .article-title {
       color: var(--white-2);
       font-weight: 100;
