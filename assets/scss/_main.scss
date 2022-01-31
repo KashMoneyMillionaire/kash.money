@@ -44,21 +44,24 @@ main {
     }
 }
 
-/* article section */
 .articles {
     display: grid;
     margin: 4rem 0 3rem 0;
+
     .article {
         padding: 2rem;
         background: var(--gray-3);
         border-radius: 15px;
         transition: all 0.2s ease-in-out;
+        margin-bottom: 3rem;
+
         .article-title {
             color: var(--white-2);
             font-weight: 100;
             font-style: italic;
             font-size: 1.4rem;
             line-height: 130%;
+
             a {
                 color: var(--white-2);
                 font-weight: 100;
@@ -67,18 +70,22 @@ main {
                 line-height: 130%;
             }
         }
+
         &:hover {
             transform: scale(1.05);
         }
+        
         .date {
             display: block;
             font-size: 0.8rem;
         }
+        
         .tags {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: flex-start;
+
             .tag {
                 margin: 0 0.5rem 0.3rem 0;
                 display: block;

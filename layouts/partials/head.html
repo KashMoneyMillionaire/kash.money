@@ -6,6 +6,11 @@
 
     <link rel="shortcut icon" type="image/jpg" href="{{site.BaseURL}}assets/favicon.ico" /> 
     
+    <!-- Common -->
+    {{ $sass := resources.Get "scss/common.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <link rel="stylesheet" href="{{$style.Permalink}}" /> 
+
     {{ if .IsPage -}}
     <link rel="stylesheet" href="{{site.BaseURL}}assets/css/post.css" />
     <script defer src="{{site.BaseURL}}assets/js/lbox.js"></script>
@@ -17,10 +22,6 @@
     <script defer src="{{site.BaseURL}}assets/js/404.js"></script>
     {{ end}}
 
-
-    {{ $sass := resources.Get "scss/common.scss" }}
-    {{ $style := $sass | resources.ToCSS }}
-    <link rel="stylesheet" href="{{$style.Permalink}}" /> 
 
     {{ range .AlternativeOutputFormats -}} {{ printf `
         <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }} 
