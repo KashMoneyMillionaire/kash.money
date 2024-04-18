@@ -4,9 +4,6 @@ date: 2024-04-18
 description: Lessons learned from travelling upstate, with tips and tricks.
 ---
 
-> Notes as of April '24
-
-
 
 ## Activities
 - Lots of hiking of all kinds of skill levels. Anywhere along the Hudson River is easy, I've done 3 or 4 routes. Good views, nice
