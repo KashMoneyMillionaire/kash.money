@@ -18,7 +18,7 @@
 ## Locations
 - Albany is a 3 hr drive north, and you probably don't need to go any further or you're gonna be driving a lot. I'd recommend staying in this circle:
 
-  ![image](Upstate-NYC-Boundary.png)
+  ![image](https://github.com/KashMoneyMillionaire/kash.money/blob/main/content/blog/Upstate-NYC-Boundary.png?raw=true)
 - Furthest west I've stayed is Hancock. It gets kinda boonies and small town out there, but Livingston Manor is nice and you can swim in the river (seasons may be cold)
 - Rhinebeck is a cute, wealthy town close to plenty of activities, food, drinks, activities
 - Beacon is a cute town with lots of visitors for hiking, with streets of stores and food and pizza and drinks and whatnot.
