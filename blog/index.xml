@@ -19,5 +19,16 @@
       <description>Activities  Lots of hiking of all kinds of skill levels. Anywhere along the Hudson River is easy, I&amp;rsquo;ve done 3 or 4 routes. Good views, nice trees and greenery. Plenty of lists on AllHikes like Upstate NYC Hikes or Best Hikes Drinking. So many breweries and distilleries and wineries up state. Zooming in on those maps and re-searching will yield more Storm King Art Center - giant sculpture park with bike rentals.</description>
     </item>
     
+    <item>
+      <title>How I Keep Up With Tech</title>
+      <link>/blog/how-i-stay-up-to-date/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <author>me@kash.money (Kash Cummings)</author>
+      <guid>/blog/how-i-stay-up-to-date/</guid>
+      <description>My thoughts on how I keep up with things happening in the technology world. This is mostly tilted towards .NET, Azure, MSFT since that is my day to day
+ Ranked List In roughly the order I&amp;rsquo;d recommend to others (see details below):
+ Daily - Dew Drop and The Morning Brew Daily (though only 1-3 good articles a day) - /r/programming Weekly dotnetrocks Semi-Weekly - Watching youtube videos of conferences and updates  Details by Category Reading  Dew Drop (Alvin Ashcraft) - An aggregator The Morning Brew (Chris Alcock) - An aggregator /r/programming - a subreddit for generic programming /m/programming - a personal multi-sub of technology related subs.</description>
+    </item>
+    
   </channel>
 </rss>
