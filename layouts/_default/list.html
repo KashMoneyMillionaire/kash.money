@@ -7,7 +7,7 @@
     <main>
         {{ partial "bio.html" . }}
         <section class="articles">
-            <!-- {{ range (.Paginate ( where site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
+            {{ range (.Paginate ( where site.RegularPages "Section" "blog" ).ByDate.Reverse).Pages }}
             <article class="article">
                 <h2 class="article-title">
                     <a href="{{ .RelPermalink }}" title="{{ .Title }}"> {{ .Title }} </a>
@@ -19,12 +19,7 @@
                     {{ end }}
                 </div>
             </article>
-            {{ end }} -->
-            <article class="article">
-                <h2 class="article-title" style="text-align: center;">
-                    More to come!
-                </h2>
-            </article>
+            {{ end }}
         </section>
     </main>
     {{ partial "footer.html" . }}
