@@ -1,40 +1,82 @@
-#bio {
+$mobile-breakpoint: 750px;
+
+#bio2 {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-}
 
-#img-wrapper img {
-    border-radius: 50%;
-    max-width: 100px;
-}
+    #title {
+        padding-bottom: 4rem;
+        display: block;
 
-#bio-wrapper {
-    margin-left: 1rem;
-}
+        span {
+            font-size: 4rem;
+            font-weight: bolder;
+            line-height: 110%;
+            color: var(--white-1);
+        }
+    }
 
-#text-wrapper {
-    line-height: 1.2rem;
-    font-weight: 300;
-}
+    #pic-of-me {
+        img {
+            border-radius: 50%;
+            max-width: 100px;
+        }
+    }
 
-#text-wrapper a {
-    color: cyan;
-    border-bottom: 1px solid cyan;
-}
+    #about {
+        margin-left: 1rem;
 
-#social-wrapper {
-    margin-top: 1rem;
-}
+        #slogan {
+            line-height: 1.2rem;
+            font-weight: 300;
+        }
 
-#social-wrapper img {
-    filter: invert(1) !important;
-    width: 25px;
-    height: 25px;
-    margin: 0 0 0.3rem 0;
-    transition: all 0.2s ease-in-out;
-}
+        #social {
+            margin-top: 1rem;
 
-#social-wrapper img:hover {
-    transform: scale(1.2);
+            img {
+                filter: invert(1) !important;
+                width: 25px;
+                height: 25px;
+                margin: 0 0 0.3rem 0;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+
+    @media screen and (max-width: $mobile-breakpoint) {
+
+        #title {
+            flex: 1 100%;
+            padding-bottom: 2rem;
+
+            span {
+                font-size: 3rem;
+                display: block;
+                text-align: center;
+
+                &:nth-of-type(2) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        #pic-of-me {
+            flex: 1 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #about {
+            flex: 2 0 0;
+        }
+    }
 }

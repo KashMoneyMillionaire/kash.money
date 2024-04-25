@@ -16,34 +16,6 @@ main {
     }
 }
 
-.bio-header {
-    padding-bottom: 4rem;
-    display: block;
-
-    .site-title {
-        font-size: 4rem;
-        font-weight: bolder;
-        line-height: 110%;
-        color: var(--white-1);
-
-        &.milli {
-            font-size: 4rem;
-        }
-
-        @media screen and (max-width: 750px) {
-            & {
-                font-size: 3rem;
-                display: block;
-                text-align: center;
-            }
-
-            &.milli {
-                font-size: 1.5rem;
-            }
-        }
-    }
-}
-
 .articles {
     display: grid;
     margin: 4rem 0 3rem 0;
