@@ -136,7 +136,7 @@ main {
   display: block;
   font-size: 0.8rem; }
 
-.content ul {
+.content ul, .content ol {
   margin-left: 2rem; }
 
 .content h2 {
