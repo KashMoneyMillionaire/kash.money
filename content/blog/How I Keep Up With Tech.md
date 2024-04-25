@@ -2,6 +2,7 @@
 title: "How I Keep Up With Tech"
 date: 2024-01-12
 description: Lessons learned from travelling upstate, with tips and tricks.
+aliases: ["/blog/how-i-stay-up-to-date"]
 ---
 
 > My thoughts on how I keep up with things happening in the technology world. This is mostly tilted towards .NET, Azure, MSFT since
