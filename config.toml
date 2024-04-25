@@ -9,10 +9,6 @@ minify = false
   name = "Kash Cummings"
   email = "me@kash.money"
 
-[permalinks]
-  posts = "/:year/:month/:day/:filename"
-  pages = "/:slug"
-
 [taxonomies]
   tag = "tags"
   category = "categories"
