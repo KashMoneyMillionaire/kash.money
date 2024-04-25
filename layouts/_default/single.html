@@ -11,7 +11,7 @@
           <!-- <small class="date">Updated on: {{ .Date.Format "Mon Jan 2, 2006" }}</small> -->
           <div class="tags">
             {{ range $.Params.tags }}
-            <a href="{{site.BaseURL}}tags/{{ . }}" class="tag">{{ . }}</a>
+            <a href="/tags/{{ . }}" class="tag">{{ . }}</a>
             {{ end }}
           </div>
         </div>
