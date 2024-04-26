@@ -7,7 +7,7 @@
     <main>
         <h2 style="text-align: center;">Thanks to the following folks who have contributed items to this website!</h2>
         <section class="articles">
-            {{ range site.Data.author.attributions }}
+            {{ range .Page.Params.attributions }}
             <article class="article">
                 <h2 class="article-title">
                     {{ .header }}
