@@ -1,99 +1,55 @@
 (async function () {
-    
-    // Grab and set basics
-    const embedPdf = document.getElementById("embed-pdf");
-    const main = document.querySelector('main')
-    embedPdf.width = main.clientWidth;
-    embedPdf.height = main.clientHeight - REM_SIZE * 4;
-    embedPdf.style.display = 'unset'
 
+    const main = document.querySelector('main');
+    const maxWidth = main.clientWidth;
+    const maxHeight = main.clientHeight - REM_SIZE * 4;
 
-    // function mobileCheck() {
-    //     return screen.orientation.type === 'portrait-primary';
-    // }
+    // Set display size
+    const pdfWrapper = document.getElementById("mobile-pdf-wrapper");
+    pdfWrapper.style.width = maxWidth;
+    pdfWrapper.style.height = maxHeight;
+    pdfWrapper.style.display = null;
 
-    // const pdfjsLib = await pdfjsLibPromise;
-    // const isMobile = mobileCheck();
-    
-    // const canvasPdf = document.getElementById("canvas-holder");
-    // let pageNum = 1;
+    // Kick off render
+    await renderPage(await pdfjsLib.getDocument(window.pdfUrl).promise, 1);
 
-    // if (isMobile) {
-    //     const pdfDoc = await pdfjsLib.getDocument(resumeUrl).promise
-    //     renderMobile(pdfDoc, 1);
-    // } else {
-    //     renderDesktop();
-    // }
+    async function renderPage(doc, num) {
+        if (num < 1 || num > doc.numPages)
+            return;
 
-    // // document.getElementById("page_count").textContent = pdfDoc.numPages;
-    // // document.getElementById("prev").addEventListener("click", onPrevPage);
-    // // document.getElementById("next").addEventListener("click", onNextPage);
+        // https://mozilla.github.io/pdf.js/examples/#Rendering%20The%20Page
+        // scale is wack, so we adjust to what we want it to be
 
-    // async function renderPage(num) {
-    //     this.disabled = true;
+        // Calculate
+        const page = await doc.getPage(num);
+        const ogViewport = page.getViewport({ scale: 1 });
+        const scale = maxWidth / ogViewport.width;
+        const desiredViewport = page.getViewport({ scale: scale });
 
-    //     const page = await pdfDoc.getPage(num);
-    //     const viewport = page.getViewport({ scale: 3 });
-    //     const canvas = document.getElementById("doc-canvas");
-    //     canvas.height = viewport.height;
-    //     canvas.width = viewport.width;
+        // Set
+        const canvas = document.getElementById("canvas-pdf");
+        canvas.height = desiredViewport.height;
+        canvas.width = desiredViewport.width;
 
-    //     // Render PDF page into canvas context
-    //     page.render({
-    //         canvasContext: canvas.getContext("2d"),
-    //         viewport: viewport,
-    //     });
+        // Render PDF page into canvas context
+        page.render({
+            canvasContext: canvas.getContext("2d"),
+            viewport: desiredViewport,
+        });
 
+        // Update page counters
+        document.getElementById("page_num").textContent = num;
+        document.getElementById("page_count").textContent = doc.numPages;
 
-    //     // Update page counters
-    //     document.getElementById("page_num").textContent = num;
-        
-    //     this.disabled = false;
-    // }
+        // Set download
+        const pdfDownload = document.getElementById("pdf-download");
+        const right = (document.body.clientWidth - canvas.width) / 2 + 5;
+        const bottom = document.body.clientHeight - canvas.getBoundingClientRect().bottom + 5;
+        pdfDownload.style.right = `${right}px`;
+        pdfDownload.style.bottom = `${bottom}px`;
 
-    // async function onPrevPage() {
-    //     if (pageNum <= 1) {
-    //         return;
-    //     }
-
-    //     await renderPage(--pageNum, document.getElementById("doc-canvas"));
-    // }
-
-    // async function onNextPage() {
-    //     if (pageNum >= pdfDoc.numPages) {
-    //         return;
-    //     }
-
-    //     await renderPage(++pageNum, document.getElementById("doc-canvas"));
-    // }
-
-    // async function renderMobile() {
-    //     throw 'Not rendering mobile'
-    //     embedPdf.style.display = "none";
-    //     // canvasPdf.style = undefined;
-
-    //     await renderPage(pageNum);
-    // }
-
-    // async function renderDesktop() {
-    //     // embedPdf.style.display = 'unset';
-    //     // embedPdf.style.maxHeight = '0px'
-    //     embedPdf.src = resumeUrl;
-
-    //     let isLoaded = false;
-
-    //     embedPdf.onload = function () {
-    //         console.log('load successful')
-    //         isLoaded = true;
-    //     };
-
-    //     // Give it a sec to try loading
-    //     // setTimeout(async function checkLoad() {
-    //     //     if (!isLoaded) {
-    //     //         await renderMobile();
-    //     //     } else {
-    //     //         embedPdf.style.maxHeight = ''
-    //     //     }
-    //     // }, 400);
-    // }
+        // Set handlers
+        document.getElementById("prev").onclick = async () => await renderPage(doc, num - 1);
+        document.getElementById("next").onclick = async () => await renderPage(doc, num + 1);
+    }
 })();
